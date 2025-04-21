@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="icons-conatiner">
+        <div class="icons">
+          <img src="https://cdn-icons-png.freepik.com/256/7347/7347438.png" alt="">
+          <h3 id="counter1">0</h3>
+          <span>Courses</span>
+        </div>
+        <div class="icons">
+          <img src="https://cdn-icons-png.freepik.com/256/10588/10588276.png" alt="">
+          <h3 id="counter2">0</h3>
+          <span>Awards</span>
+        </div>
+        <div class="icons">
+          <img src="https://cdn-icons-png.freepik.com/256/17643/17643587.png" alt="">
+          <h3 id="counter3">0</h3>
+          <span>Students</span>
+        </div>
+      </div>
+
+      <script>
+        // Function to update the counters
+
+        
+        function updateCounters() {
+          let counter1 = document.getElementById('counter1');
+          let counter2 = document.getElementById('counter2');
+          let counter3 = document.getElementById('counter3');
+      
+          // Set the target values (you can adjust these values as needed)
+          let target1 = 100; // For example, number of courses
+          let target2 = 50;  // Number of awards
+          let target3 = 200; // Number of students
+      
+          // Function to increment the counter smoothly
+          function incrementCounter(counter, target) {
+            let currentValue = parseInt(counter.innerText);
+            let interval = setInterval(() => {
+              if (currentValue < target) {
+                currentValue++;
+                counter.innerText = currentValue;
+              } else {
+                clearInterval(interval);
+              }
+            }, 10); // Adjust speed by changing the interval (in milliseconds)
+          }
+      
+          // Call the increment function for each counter
+          incrementCounter(counter1, target1);
+          incrementCounter(counter2, target2);
+          incrementCounter(counter3, target3);
+        }
+      
+        // Call updateCounters when the page is loaded
+        window.onload = updateCounters;
+      </script>
+      
+      
+</body>
+</html>

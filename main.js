@@ -116,7 +116,24 @@ var swiper = new Swiper(".home-slider", {
       },
     }
   });
+  const faqs = document.querySelectorAll('.FAq');
 
+  faqs.forEach(shows=>{
+    shows.addEventListener('click',()=>{
+shows.classList.toggle('active')
+    })
+  })
+
+  
+
+const btnclick = document.querySelector('.loadMore')
+btnclick.addEventListener('click',()=>{
+    const allhide = document.querySelectorAll('.hide')
+    allhide.forEach(show=>{
+        show.style.display='block'
+    })
+    document.querySelector('.loadMore').style.display='none'
+})
 
 
 
